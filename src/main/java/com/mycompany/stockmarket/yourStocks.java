@@ -201,6 +201,7 @@ String aadj[];
         setVisible(true); 
     }
      public void refreshTable() {
+         if(this.allStocks!=null){
          String row1[][]=new String[bb.size()][8];
              int count=0;
             for(StockBuyed b:bb){
@@ -223,6 +224,7 @@ String aadj[];
     
 }
      }
+         }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -259,9 +261,9 @@ String aadj[];
         
     }
         if(e.getSource()==viewMar){
-            this.setVisible(false);
-            new Stock(aadj);
             
+            new Stock(aadj);
+            dispose();
 
         
     }
@@ -329,7 +331,9 @@ String aadj[];
         }
         if (e.getSource()==sell){
             double dd=qnt+Double.parseDouble(aadj[2]);
-            money.setText("Balence : "+ sq.updatePrice(aadj[1], dd));
+            sq.updatePrice(aadj[1], dd);
+            aadj[2]=""+dd;
+            money.setText("Balence : "+dd );
             int d1=Integer.parseInt(qt.getSelectedItem().toString());
             int q1t=Integer.parseInt(allStocks.getValueAt(allStocks.getSelectedRow(), 4).toString())-d1;
             System.out.println(q1t);
@@ -337,9 +341,9 @@ String aadj[];
             bb=sq.getownstock(aadj[1]);
             refreshTable();
 sq.setHist(aadj[1], allStocks.getValueAt(allStocks.getSelectedRow(), 1)+" sold qnt "+d1+" at price "+aadj[2]+" on "+new Date());
-           
+           dispose();
            new yourStocks(aadj);
-            dispose();
+            
             
             
             
