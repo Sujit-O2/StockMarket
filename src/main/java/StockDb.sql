@@ -1,6 +1,7 @@
+
 Create database if not exists StockMarket;
 use StockMarket;
-CREATE TABLE if not exists stocks (
+CREATE TABLE  stocks (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(20),
     price varchar(30)
@@ -56,6 +57,8 @@ INSERT INTO stocks (name, price) VALUES ('TATAMOTORS', 980.45);
 INSERT INTO stocks (name, price) VALUES ('UPL', 645.35);
 INSERT INTO stocks (name, price) VALUES ('APOLLOHOSP', 6450.85);
 select * from stocks;
+SET sql_safe_updates = 0;
+
 
 
 create table users (

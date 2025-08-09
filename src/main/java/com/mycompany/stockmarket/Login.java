@@ -37,7 +37,7 @@ public class Login  extends JFrame implements ActionListener{
          setDefaultCloseOperation(EXIT_ON_CLOSE);
          setLayout(null);
         setSize(600,500);
-        HEAD=new JLabel("WELCOME TO THE STOCK MARCATE");
+        HEAD=new JLabel("WELCOME TO THE STOCK MARKET");
         HEAD.setBounds(130,30,350,40);
         HEAD.setFont(new Font("",Font.ITALIC,19));
         HEAD.setForeground(Color.darkGray);

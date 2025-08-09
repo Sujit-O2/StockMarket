@@ -24,7 +24,7 @@ public class User extends JFrame implements ActionListener{
     JTextField amountField;
     String alldet[];
     public User( String alldet[]){
-        HEAD=new JLabel("WELCOME TO THE STOCK MARCATE");
+        HEAD=new JLabel("WELCOME TO THE STOCK MARKET");
         HEAD.setBounds(130,30,350,40);
         HEAD.setFont(new Font("",Font.ITALIC,19));
         HEAD.setForeground(Color.darkGray);
@@ -36,11 +36,11 @@ public class User extends JFrame implements ActionListener{
         setSize(600,500);
         String Name=alldet[0];
         float Amount=Float.parseFloat(String.format("%.2f", Float.parseFloat(alldet[2])));
-        Welcome=new JLabel("Welcone to you " +Name +" .");
+        Welcome=new JLabel("Welcome to you " +Name +" .");
         Money=new JLabel("Balence : "+Amount);
         Welcome.setFont(new Font("",Font.BOLD|Font.ITALIC,20));
         Money.setFont(new Font("",Font.BOLD,16));
-        viewMar=new JButton(" VIEW MARCATE");
+        viewMar=new JButton(" VIEW MARKET");
         sellSeeStk=new JButton("PORTFOLIO");
         addMon=new JButton("+");
         logout=new JButton("LOGOUT");
@@ -137,7 +137,7 @@ public class User extends JFrame implements ActionListener{
             d2=d1+d2;
             SQLStocks sq=new SQLStocks();
             d2=sq.updatePrice(alldet[1], d2);
-            Money.setText("Balence : "+String.format("%.2f",d2));
+            Money.setText("Balance : "+String.format("%.2f",d2));
             alldet[2]=""+d2;
              sq.setHist(alldet[1],"You Recharged  "+d1+" on "+new Date());
             dialog.setVisible(false);

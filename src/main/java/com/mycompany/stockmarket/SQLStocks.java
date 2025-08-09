@@ -19,7 +19,7 @@ public class SQLStocks {
     String Pass = "tAPASWINI";
 
     public String[][] getStocks() {
-        String Stocks[][] = new String[50][3];
+        String Stocks[][] = new String[51][3];
         int count = 0;
         try (
             Connection cc = DriverManager.getConnection(url, name, Pass);
