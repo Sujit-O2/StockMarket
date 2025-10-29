@@ -14,7 +14,8 @@ Manage accounts, view market prices, execute trades, track your portfolio, and r
 
 ---
 
-## ✨ Features
+## ✨ Features :
+
 
 - 🔐 **User Authentication** – Sign up & log in securely  
 - 📈 **Market Overview** – View simulated stock prices with live updates  
